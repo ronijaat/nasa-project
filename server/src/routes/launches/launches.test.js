@@ -4,13 +4,13 @@ const app = require("../../app");
 const {connectMongo,
     disConnect} = require("../../../services/mongo");
 const {
-    loadPlanetData,
-} = require('../../models/launches.model');
+    loadPlanetsdata,
+} = require('../../models/planets.model');
 
 describe("Testing API",()=>{
     beforeAll(async ()=>{
         await connectMongo();
-        await loadPlanetData();
+        await loadPlanetsdata();
     })
 
     afterAll(async ()=>{
