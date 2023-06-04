@@ -12,7 +12,9 @@
     "watch": "concurrently 'npm:server' 'npm:client'",
     "build": "npm run build --prefix client",
     "deploy": "concurrently 'npm:build' 'npm:server'",
-    "test": "jest",
+    "client-test":"npm run test --prefix client",
+    "server-test":"npm run test --prefix server",
+    "test": "concurrently 'npm:client-test 'npm:server-test'",
     "server_cluster": "npm run cluster --prefix server",
     "deploy-cluster": "concurrently 'npm:build' 'npm:server_cluster'"
   },
