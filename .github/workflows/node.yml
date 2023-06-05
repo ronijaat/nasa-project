@@ -5,13 +5,13 @@ on:
   pull_request:
     branches: [master]
 jobs:
-  env:
-    CI: true
-    #PORT: 9000
-  strategy:
-    matrix:
-      node-version: [14.x,16.x]
   build:
+    env:
+      CI: true
+      #PORT: 9000
+    strategy:
+      matrix:
+        node-version: [14.x,16.x]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
